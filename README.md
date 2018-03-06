@@ -10,6 +10,7 @@ Features:
 - Latest Polymer 3 preview
 - Components split into component class, styles and templates. No more huge files with mixed content!
 - TypeScript with TSLint preconfigured, so that you can write reliable, high quality code
+- Using SCSS by default. Write less, do more!
 - Lazy-loading using the brand new [JavaScript dynamic import syntax](https://developers.google.com/web/updates/2017/11/dynamic-import)
 - Shared styles and custom iconset, just like the original [PSK](https://github.com/Polymer/polymer-starter-kit)
 - Automatic service worker generation using [Workbox](https://github.com/GoogleChrome/workbox)
@@ -91,4 +92,4 @@ with it, even completely change its structure :P
 
 ### PRs are welcome!
 You noticed a bug, a possible improvement or whatever?
-Any help is always appreciated, so don't hesitate opening a PR!
+Any help is always appreciated, so don't hesitate opening one!
