@@ -104,7 +104,7 @@ module.exports = {
     new WorkboxPlugin({
       globDirectory: path.resolve(__dirname, '../build'),
       globPatterns: ['*.html', 'scripts/*.js', 'scripts/wc/webcomponents-loader.js', 'manifest.json'],
-      swDest: path.resolve(__dirname, '../build/scripts/sw.js'),
+      swDest: path.resolve(__dirname, '../build/sw.js'),
       clientsClaim: true,
       skipWaiting: true,
       runtimeCaching: [{
