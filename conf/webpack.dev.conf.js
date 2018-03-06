@@ -21,8 +21,8 @@ module.exports = {
     // https: true,
   },
   output: {
-    filename: '[name].js',
-    chunkFilename: '[name].js',
+    filename: 'scripts/[name].js',
+    chunkFilename: 'scripts/[name].js',
     path: path.resolve(__dirname, '../build'),
   },
   module: {
@@ -64,16 +64,6 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['build'], {verbose: true, root: path.resolve(__dirname, '..')}),
     new HtmlWebpackPlugin({
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        sortAttributes: true,
-        sortClassName: true,
-        useShortDoctype: true
-      },
       hash: true,
       inject: true,
       template: '../src/index.html'
