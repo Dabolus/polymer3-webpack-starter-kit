@@ -1,0 +1,16 @@
+{
+  "name": "polymer3-webpack-starter-kit",
+  "version": "1.0.0",
+  "description": "Polymer 3 Starter Kit with Webpack",
+  "main": "src/bootstrap.ts",
+  "author": "Dabolus",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "frontend": "yarn --cwd ./src",
+    "conf": "yarn --cwd ./conf",
+    "postinstall": "yarn --cwd ./src install && yarn --cwd ./conf install",
+    "serve": "cd ./conf && yarn serve && cd ..",
+    "build": "cd ./conf && yarn build && cd .."
+  }
+}
