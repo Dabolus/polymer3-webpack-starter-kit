@@ -10,11 +10,17 @@ module.exports = {
   entry: {
     app: '../src/bootstrap'
   },
-  mode: 'production',
+  mode: 'development', // TODO: Fix build not working when mode = production
   output: {
     filename: 'scripts/[name].js',
     chunkFilename: 'scripts/[name].js',
-    path: path.resolve(__dirname, '../build')
+    path: path.resolve(__dirname, '../build'),
+  },
+  resolveLoader: {
+    alias: {
+      // Custom loaders
+      'minify-template-loader': path.resolve(__dirname, 'minify-template-loader.js'),
+    },
   },
   module: {
     rules: [
@@ -27,7 +33,7 @@ module.exports = {
           failOnHint: true,
           typeCheck: true,
           fix: true,
-        }
+        },
       },
       {
         test: /\.html$/,
@@ -36,8 +42,8 @@ module.exports = {
           options: {
             exportAsEs6Default: true,
             minimize: true,
-          }
-        }
+          },
+        },
       },
       {
         test: /\.scss$/,
@@ -47,8 +53,18 @@ module.exports = {
         test: /\.ts$/,
         use: 'ts-loader',
         exclude: /node_modules/,
-      }
-    ]
+      },
+      {
+        test: /\.[jt]s$/,
+        use: {
+          loader: 'minify-template-loader',
+          options: {
+            caseSensitive: true,
+            collapseWhitespace: true,
+          },
+        },
+      },
+    ],
   },
   resolve: {
     extensions: ['.ts', '.js', '.scss', '.html']

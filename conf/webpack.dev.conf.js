@@ -8,8 +8,8 @@ module.exports = {
   entry: {
     app: [
       'webpack-dev-server/client?http://localhost:8080', // live reload
-      '../src/bootstrap'
-    ]
+      '../src/bootstrap',
+    ],
   },
   mode: 'development',
   devtool: 'inline-source-map',
@@ -36,7 +36,7 @@ module.exports = {
           failOnHint: true,
           typeCheck: true,
           fix: true,
-        }
+        },
       },
       {
         test: /\.html$/,
@@ -55,8 +55,8 @@ module.exports = {
         test: /\.ts$/,
         use: 'ts-loader',
         exclude: /node_modules/
-      }
-    ]
+      },
+    ],
   },
   resolve: {
     extensions: ['.ts', '.js', '.scss', '.html']
