@@ -16,8 +16,14 @@ Features:
 - Automatic service worker generation using [Workbox](https://github.com/GoogleChrome/workbox)
 - [Webpack 4](https://webpack.js.org) to bundle 'em all!
 
-### Setup
+### Preview
+You can see an online preview of the project on my [Github Pages](https://dabolus.github.io/polymer3-webpack-starter-kit/).
 
+_Note that GH Pages does not currently support routing all the requests to an index.html, so you won't be able to link
+to a specific page of this online preview. However, you can still switch from one page to another
+once you've loaded the index._
+
+### Setup
 - Install [Node.js](https://nodejs.org) (hopefully you already have it installed)
 - Install [yarn](https://yarnpkg.com)
 - Clone this repository
