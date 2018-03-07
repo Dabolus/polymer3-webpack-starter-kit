@@ -14,7 +14,7 @@ module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.resolve(__dirname, '../build'),
+    contentBase: path.resolve(__dirname, '../dev'),
     hot: true,
     historyApiFallback: true,
     // Uncomment next line if you want your dev server to use HTTP/2
@@ -23,7 +23,7 @@ module.exports = {
   output: {
     filename: 'scripts/[name].js',
     chunkFilename: 'scripts/[name].js',
-    path: path.resolve(__dirname, '../build'),
+    path: path.resolve(__dirname, '../dev'),
   },
   module: {
     rules: [
@@ -62,7 +62,7 @@ module.exports = {
     extensions: ['.ts', '.js', '.scss', '.html']
   },
   plugins: [
-    new CleanWebpackPlugin(['build'], {verbose: true, root: path.resolve(__dirname, '..')}),
+    new CleanWebpackPlugin(['dev'], {verbose: true, root: path.resolve(__dirname, '..')}),
     new HtmlWebpackPlugin({
       hash: true,
       inject: true,
