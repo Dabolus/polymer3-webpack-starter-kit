@@ -48,7 +48,32 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ['to-string-loader', 'css-loader?minimize', 'sass-loader'],
+        use: [
+          {
+            loader: 'to-string-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: true,
+            },
+          },
+          ...transpile ? [{
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: (loader) => {
+                require('postcss-import')({ root: loader.resourcePath }),
+                require('postcss-cssnext')(),
+                require('autoprefixer')(),
+                require('cssnano')()
+              },
+            },
+          }] : [],
+          {
+            loader: 'sass-loader',
+          },
+        ],
       },
       {
         test: /\.ts$/,
