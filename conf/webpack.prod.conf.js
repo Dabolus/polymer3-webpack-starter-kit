@@ -5,6 +5,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 
+const transpile = process.env.TRANSPILE === 'true';
+
 module.exports = {
   entry: {
     app: '../src/bootstrap'
@@ -50,7 +52,21 @@ module.exports = {
       },
       {
         test: /\.ts$/,
-        use: 'ts-loader',
+        use: [
+          ...transpile ? [{
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+              plugins: [
+                'es6-promise',
+                'syntax-dynamic-import',
+              ],
+            },
+          }] : [],
+          {
+            loader: 'ts-loader',
+          }
+        ],
         exclude: /node_modules/,
       },
       {

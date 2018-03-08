@@ -11,6 +11,7 @@
     "conf": "yarn --cwd ./conf",
     "postinstall": "yarn --cwd ./src install && yarn --cwd ./conf install",
     "serve": "cd ./conf && yarn serve && cd ..",
-    "build": "cd ./conf && yarn build && cd .."
+    "build": "cd ./conf && yarn build && cd ..",
+    "build:transpiled": "cd ./conf && yarn build:transpiled && cd .."
   }
 }

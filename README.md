@@ -51,6 +51,12 @@ yarn conf [...args]
 yarn serve
 # Starts webpack dev server with live reload on http://localhost:8080
 
+yarn build
+# Builds the production ready website in the build/ directory
+
+yarn build:transpiled
+# Same as the command above, but it also transpiles JS code to ES5
+
 yarn install
 # Installing the dependencies on the main package will automatically install
 # The dependencies on both the frontend and the conf package
