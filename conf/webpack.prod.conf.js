@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 
 const transpile = process.env.TRANSPILE === 'true';
@@ -11,7 +10,7 @@ module.exports = {
   entry: {
     app: '../src/bootstrap'
   },
-  mode: 'development', // TODO: Fix build not working when mode = production
+  mode: 'production',
   output: {
     filename: 'scripts/[name].js',
     chunkFilename: 'scripts/[name].js',
@@ -111,7 +110,6 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['build'], {root: path.resolve(__dirname, '..')}),
-    new UglifyJSPlugin(),
     new HtmlWebpackPlugin({
       minify: {
         collapseWhitespace: true,
