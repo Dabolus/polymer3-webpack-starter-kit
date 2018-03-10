@@ -1,4 +1,7 @@
-# Polymer 3 Starter Kit with Webpack
+<p align="center">
+  <img src="https://dabolus.github.io/polymer3-webpack-starter-kit/p+w.svg">
+</p>
+<h1 align="center">Polymer 3 Starter Kit with Webpack</h1>
 
 Want to use the latest Polymer 3 but you don't know how to get started?
 Got you covered!
