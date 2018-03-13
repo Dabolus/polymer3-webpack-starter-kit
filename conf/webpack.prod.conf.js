@@ -8,7 +8,8 @@ const transpile = process.env.TRANSPILE === 'true';
 
 module.exports = {
   entry: {
-    app: '../src/bootstrap'
+    ...transpile && { polyfills: 'babel-polyfill' },
+    app: '../src/bootstrap',
   },
   mode: 'production',
   output: {
@@ -74,6 +75,16 @@ module.exports = {
           },
         ],
       },
+      ...transpile ? [{
+        test: /\.js$/,
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env'],
+          plugins: [
+            'syntax-dynamic-import',
+          ],
+        },
+      }] : [],
       {
         test: /\.ts$/,
         use: [
@@ -82,7 +93,6 @@ module.exports = {
             options: {
               presets: ['@babel/preset-env'],
               plugins: [
-                'es6-promise',
                 'syntax-dynamic-import',
               ],
             },
@@ -111,6 +121,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['build'], {root: path.resolve(__dirname, '..')}),
     new HtmlWebpackPlugin({
+      transpile,
       minify: {
         collapseWhitespace: true,
         removeComments: true,
@@ -120,10 +131,12 @@ module.exports = {
         sortAttributes: true,
         sortClassName: true,
         useShortDoctype: true,
+        minifyCSS: true,
+        minifyJS: true,
       },
       hash: true,
       inject: true,
-      template: '../src/index.html',
+      template: '!!handlebars-loader!../src/index.hbs',
     }),
     // copy custom static assets
     new CopyWebpackPlugin([

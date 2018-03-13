@@ -51,6 +51,11 @@
       }
     </script>
 
+    {{#if htmlWebpackPlugin.options.transpile}}
+    <!-- Load the elements adapter for es5 transpiled code -->
+    <script src="scripts/wc/custom-elements-es5-adapter.js"></script>
+    {{/if}}
+
     <!-- Load webcomponents-loader.js to check and load any polyfills your browser needs -->
     <script src="scripts/wc/webcomponents-loader.js"></script>
 
