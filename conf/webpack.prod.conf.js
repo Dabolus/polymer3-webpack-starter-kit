@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
@@ -138,6 +139,10 @@ module.exports = {
       hash: true,
       inject: true,
       template: '!!handlebars-loader!../src/index.hbs',
+    }),
+    new ScriptExtHtmlWebpackPlugin({
+      async: 'webcomponents-loader.js',
+      defer: 'app.js',
     }),
     // copy custom static assets
     new CopyWebpackPlugin([
