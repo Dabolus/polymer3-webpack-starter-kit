@@ -66,7 +66,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       hash: true,
       inject: true,
-      template: '../src/index.html'
+      template: '!!handlebars-loader!../src/index.hbs',
     }),
     // copy custom static assets
     new CopyWebpackPlugin([
