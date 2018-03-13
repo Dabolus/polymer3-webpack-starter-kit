@@ -9,6 +9,7 @@ const transpile = process.env.TRANSPILE === 'true';
 module.exports = {
   entry: {
     ...transpile && { polyfills: 'babel-polyfill' },
+    'wc/webcomponents-loader': '../src/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader', 
     app: '../src/bootstrap',
   },
   mode: 'production',
@@ -148,7 +149,7 @@ module.exports = {
       {
         from: path.resolve(__dirname, '../src/node_modules/@webcomponents/webcomponentsjs/*.js'),
         to: './scripts/wc',
-        ignore: ['gulpfile.js'],
+        ignore: ['gulpfile.js', 'webcomponents-loader.js'],
         flatten: true,
       },
     ]),
