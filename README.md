@@ -105,6 +105,10 @@ goal and logic.
 Don't like it? Well, that's just a starter kit, so you can do whatever you want
 with it, even completely change its structure :P
 
-### PRs are welcome!
+### Contributing
+**PRs are welcome!**
 You noticed a bug, a possible improvement or whatever?
 Any help is always appreciated, so don't hesitate opening one!
+
+Be sure to check out the [contributing guidelines](CONTRIBUTING.md) to fasten
+up the merging process.
