@@ -64,6 +64,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dev'], {verbose: true, root: path.resolve(__dirname, '..')}),
     new HtmlWebpackPlugin({
+      basePath: '/',
       hash: true,
       inject: true,
       template: '!!handlebars-loader!../src/index.hbs',

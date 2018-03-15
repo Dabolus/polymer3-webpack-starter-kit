@@ -124,6 +124,7 @@ module.exports = {
     new CleanWebpackPlugin(['build'], {root: path.resolve(__dirname, '..')}),
     new HtmlWebpackPlugin({
       transpile,
+      basePath: process.env.BASE_PATH || '/',
       minify: {
         collapseWhitespace: true,
         removeComments: true,
