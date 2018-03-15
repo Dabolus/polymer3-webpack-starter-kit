@@ -43,7 +43,7 @@
       window.Polymer = {rootPath: '/'};
       // Load and register pre-caching Service Worker
       if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
+        window.addEventListener('load', function () {
           navigator.serviceWorker.register('sw.js', {
             scope: Polymer.rootPath,
           });
