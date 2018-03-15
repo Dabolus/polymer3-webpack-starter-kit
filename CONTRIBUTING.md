@@ -8,7 +8,7 @@ The following is a set of guidelines for contributing to this Starter Kit. These
 
 If you need an answer, you can either:
   1. Open an issue and assign to it the `question` label, or
-  2. If you need a faster response, [join the telegram group](https://t.me/joinchat/BgcHHE-NwwWNnnnu2Bnl-Q) and ask your question there
+  2. If you need a faster response, either join [the Telegram group](https://t.me/joinchat/BgcHHE-NwwWNnnnu2Bnl-Q) or [the Slack channel](https://join.slack.com/t/p3wsk/shared_invite/enQtMzMxNTUwMTg1NzUwLWFjYWZmOTUwM2IxMzVmMDU2ZjdmMTg2NzgxOWU2MTYwYmM2YjNmYjMwYzUxNzM4ZmI2ODVlMWZmMTI5M2IyNWU) and ask your question there
 
 ### How can I contribute?
 
