@@ -18,6 +18,7 @@ Features:
 - Shared styles and custom iconset, just like the original [PSK](https://github.com/Polymer/polymer-starter-kit)
 - Automatic service worker generation using [Workbox](https://github.com/GoogleChrome/workbox)
 - [Webpack 4](https://webpack.js.org) to bundle 'em all!
+- Basic [Firebase](https://firebase.google.com/) configuration to allow easy deployment out of the box
 
 ### Preview
 You can see an online preview of the project on my [Github Pages](https://dabolus.github.io/polymer3-webpack-starter-kit/).
@@ -39,6 +40,11 @@ once you've loaded the index._
   ```
   _This will automatically install both the frontend and the build tools dependencies.
   Go on reading to understand the project structure and why it is organized in this way._
+- _Optional:_ if you wish to deploy your PWA on Firebase, remember that you also need to
+  install `firebase-tools`
+  ```bash
+  yarn global add firebase-tools
+  ```
 - Profit!
 
 ### Available scripts
@@ -62,7 +68,16 @@ yarn build:transpiled
 
 yarn install
 # Installing the dependencies on the main package will automatically install
-# The dependencies on both the frontend and the conf package
+# the dependencies on both the frontend and the conf package
+
+yarn deploy [...args]
+# Alias of 'firebase deploy'. The args will be passed to firebase
+# e.g. yarn deploy --only hosting
+# Note that this command won't build the project before deploying it,
+# so you will have to do it yourself.
+# e.g. yarn build && yarn deploy
+# By default, the files to deploy are the ones inside the build/ directory
+# To change this behavior, change the "public" property in 'firebase.json'
 ```
 
 ### Project Structure
