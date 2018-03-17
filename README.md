@@ -62,6 +62,12 @@ yarn serve
 
 yarn build
 # Builds the production ready website in the build/ directory
+# By default, the base path of the built project will be '/'
+# If you wish to change this behavior, you can set the BASE_PATH
+# environment variable to whatever you want the base path to be
+# REMEMBER TO ADD THE LEADING AND TRAILING SLASHES
+# e.g. on MacOS/Linux
+# BASE_PATH=/my-app/ yarn build
 
 yarn build:transpiled
 # Same as the command above, but it also transpiles JS code to ES5
