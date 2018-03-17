@@ -142,8 +142,7 @@ module.exports = {
       template: '!!handlebars-loader!../src/index.hbs',
     }),
     new ScriptExtHtmlWebpackPlugin({
-      async: 'webcomponents-loader.js',
-      defer: 'app.js',
+      defer: ['webcomponents-loader.js', 'app.js'],
     }),
     // copy custom static assets
     new CopyWebpackPlugin([
