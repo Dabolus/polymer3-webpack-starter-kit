@@ -30,4 +30,13 @@ module.exports = {
     // to gzip your content
     enableGzip: false,
   },
+
+  // Webpack bundle analyzer settings
+  bundleAnalyzer: {
+    // Set this flag to true to enable the analyzer
+    enabled: false,
+
+    // The port where webpack bundle analyzer should serve its output
+    port: 8081,
+  },
 };

@@ -33,6 +33,7 @@
     "tslint-loader": "^3.6.0",
     "typescript": "^2.7.2",
     "webpack": "^4.1.0",
+    "webpack-bundle-analyzer": "^2.11.1",
     "webpack-cli": "^2.0.10",
     "webpack-dev-server": "^3.1.0",
     "workbox-webpack-plugin": "^2.1.3"
