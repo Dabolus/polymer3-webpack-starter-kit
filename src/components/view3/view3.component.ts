@@ -1,7 +1,7 @@
 import {Element as PolymerElement} from '@polymer/polymer/polymer-element';
 import view from './view3.template.html';
 import style from './view3.style.scss';
-import sharedStyles from '../shared-styles.scss';
+import '../shared-styles';
 
 export class MyView3 extends PolymerElement {
   $: any;
@@ -11,7 +11,7 @@ export class MyView3 extends PolymerElement {
   }
 
   static get template() {
-    return `<style>${sharedStyles} ${style}</style>${view}`;
+    return `<style include="shared-styles">${style}</style>${view}`;
   }
 }
 
