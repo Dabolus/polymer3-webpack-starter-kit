@@ -4,6 +4,7 @@ const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
+const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer');
 const config = require('./app.config');
 
 module.exports = {
@@ -168,5 +169,9 @@ module.exports = {
         handler: 'staleWhileRevalidate',
       }],
     }),
+    ...config.bundleAnalyzer.enabled ? [new BundleAnalyzerPlugin({
+      analyzerHost: 'localhost',
+      analyzerPort: config.bundleAnalyzer.port,
+    })] : [],
   ],
 };
