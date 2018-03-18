@@ -63,14 +63,9 @@ yarn serve
 yarn build
 # Builds the production ready website in the build/ directory
 # By default, the base path of the built project will be '/'
-# If you wish to change this behavior, you can set the BASE_PATH
-# environment variable to whatever you want the base path to be
+# If you wish to change this behavior, you can set the basePath
+# variable to whatever you want the base path to be inside conf/app.config.js
 # REMEMBER TO ADD THE LEADING AND TRAILING SLASHES
-# e.g. on MacOS/Linux
-# BASE_PATH=/my-app/ yarn build
-
-yarn build:transpiled
-# Same as the command above, but it also transpiles JS code to ES5
 
 yarn install
 # Installing the dependencies on the main package will automatically install
@@ -85,6 +80,11 @@ yarn deploy [...args]
 # By default, the files to deploy are the ones inside the build/ directory
 # To change this behavior, change the "public" property in 'firebase.json'
 ```
+
+### Project configuration
+You can find a lot of useful configuration options inside the `conf/app.config.js` file.
+If these options aren't enough for you, you can always edit webpack configuration and everything
+else at you needs.
 
 ### Project Structure
 So, if you already explored the project, you might have noticed something strange in it.
