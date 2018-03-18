@@ -14,6 +14,9 @@ import '@polymer/paper-icon-button/paper-icon-button';
 import view from './shell.template.html';
 import style from './shell.style.scss';
 import '../icons';
+// Have to include the shared styles here even if they're not directly used
+// so that they're bundled within the app.js and not within each dynamic view
+import '../shared-styles';
 
 export class MyApp extends PolymerElement {
   $: any;
