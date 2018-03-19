@@ -3,6 +3,8 @@
 </p>
 <h1 align="center">Polymer 3 Starter Kit with Webpack</h1>
 
+[![Build Status](https://travis-ci.org/Dabolus/polymer3-webpack-starter-kit.svg?branch=master)](https://travis-ci.org/Dabolus/polymer3-webpack-starter-kit)
+
 Want to use the latest Polymer 3 but you don't know how to get started?
 Got you covered!
 
