@@ -1,5 +1,5 @@
-declare module '*.html' {
-  const content: string;
+declare module '*.ejs' {
+  const content: (...args: any[]) => string;
   export default content;
 }
 

@@ -46,13 +46,8 @@ module.exports = {
         },
       },
       {
-        test: /\.html$/,
-        use: {
-          loader: 'html-loader',
-          options: {
-            exportAsEs6Default: true,
-          },
-        },
+        test: /\.ejs$/,
+        use: 'ejs-compiled-loader',
       },
       {
         test: /\.scss$/,
@@ -74,7 +69,7 @@ module.exports = {
       basePath: config.basePath,
       hash: true,
       inject: true,
-      template: '!!handlebars-loader!../src/index.hbs',
+      template: '../src/index.ejs',
     }),
     // copy custom static assets
     new CopyWebpackPlugin([

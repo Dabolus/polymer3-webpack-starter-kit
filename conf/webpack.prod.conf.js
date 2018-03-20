@@ -39,14 +39,8 @@ module.exports = {
         },
       },
       {
-        test: /\.html$/,
-        use: {
-          loader: 'html-loader',
-          options: {
-            exportAsEs6Default: true,
-            minimize: true,
-          },
-        },
+        test: /\.ejs$/,
+        use: 'ejs-compiled-loader',
       },
       {
         test: /\.scss$/,
@@ -139,7 +133,7 @@ module.exports = {
       },
       hash: true,
       inject: true,
-      template: '!!handlebars-loader!../src/index.hbs',
+      template: '../src/index.ejs',
     }),
     new ScriptExtHtmlWebpackPlugin({
       defer: ['webcomponents-loader.js', 'app.js'],

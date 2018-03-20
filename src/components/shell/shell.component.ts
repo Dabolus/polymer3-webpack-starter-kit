@@ -11,7 +11,7 @@ import '@polymer/iron-pages/iron-pages';
 import '@polymer/iron-selector/iron-selector';
 import '@polymer/paper-icon-button/paper-icon-button';
 
-import view from './shell.template.html';
+import view from './shell.template.ejs';
 import style from './shell.style.scss';
 import '../icons';
 // Have to include the shared styles here even if they're not directly used
@@ -27,7 +27,7 @@ export class MyApp extends PolymerElement {
   }
 
   static get template() {
-    return `<style>${style}</style>${view}`;
+    return `<style>${style}</style>${view()}`;
   }
 
   static get properties() {
