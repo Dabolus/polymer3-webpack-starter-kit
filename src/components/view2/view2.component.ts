@@ -1,4 +1,4 @@
-import {Element as PolymerElement} from '@polymer/polymer/polymer-element';
+import {PolymerElement} from '@polymer/polymer/polymer-element';
 import view from './view2.template.html';
 import style from './view2.style.scss';
 import '../shared-styles';
@@ -15,4 +15,4 @@ export class MyView2 extends PolymerElement {
   }
 }
 
-window.customElements.define(MyView2.is, MyView2);
+window.customElements.define("my-view2", MyView2);
