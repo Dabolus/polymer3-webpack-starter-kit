@@ -10,7 +10,7 @@ declare module '*.scss' {
 
 declare module '@polymer/polymer/polymer-element' {
   // noinspection TsLint
-  export const Element: any;
+  export const PolymerElement: any;
   export const html: any;
 }
 
