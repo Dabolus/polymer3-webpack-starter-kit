@@ -15,4 +15,4 @@ export class MyView404 extends PolymerElement {
   }
 }
 
-window.customElements.define("my-view404", MyView404);
+window.customElements.define(MyView404.is, MyView404);

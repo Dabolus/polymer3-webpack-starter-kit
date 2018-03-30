@@ -1,6 +1,36 @@
-<div class="card">
-  <div class="circle">2</div>
-  <h1>View Two</h1>
-  <p>Ea duis bonorum nec, falli paulo aliquid ei eum.</p>
-  <p>Id nam odio natum malorum, tibique copiosae expetenda mel ea.Detracto suavitate repudiandae no eum. Id adhuc minim soluta nam.Id nam odio natum malorum, tibique copiosae expetenda mel ea.</p>
-</div>
+<app-location
+    route="{{route}}"
+    url-space-regex="^[[rootPath]]view2\/">
+</app-location>
+
+<app-route
+    route="{{route}}"
+    pattern="[[rootPath]]view2/:page"
+    data="{{routeData}}"
+    tail="{{subroute}}">
+</app-route>
+
+<iron-pages
+    selected="[[page]]"
+    attr-for-selected="name"
+    fallback-selection="index"
+    role="main">
+  <div name="index" class="card">
+    <div class="circle">2</div>
+    <h1>View Two</h1>
+    <p>Ea duis bonorum nec, falli paulo aliquid ei eum.</p>
+    <p>Id nam odio natum malorum, tibique copiosae expetenda mel ea.Detracto suavitate repudiandae no eum. Id adhuc minim soluta nam.Id nam odio natum malorum, tibique copiosae expetenda mel ea.</p>
+    <a href="[[rootPath]]view2/subview1" class="button">
+      <paper-button>Subview 1</paper-button>
+    </a>
+    <a href="[[rootPath]]view2/subview2" class="button">
+      <paper-button>Subview 2</paper-button>
+    </a>
+    <a href="[[rootPath]]view2/subview3" class="button">
+      <paper-button>Subview 3</paper-button>
+    </a>
+  </div>
+  <my-subview1 name="subview1"></my-subview1>
+  <my-subview2 name="subview2"></my-subview2>
+  <my-subview3 name="subview3"></my-subview3>
+</iron-pages>

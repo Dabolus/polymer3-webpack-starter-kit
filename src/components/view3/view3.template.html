@@ -1,6 +1,32 @@
-<div class="card">
-  <div class="circle">3</div>
-  <h1>View Three</h1>
-  <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
-  <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
-</div>
+<app-location
+    route="{{route}}"
+    url-space-regex="^[[rootPath]]view3\/">
+</app-location>
+
+<app-route
+    route="{{route}}"
+    pattern="[[rootPath]]view3/:page"
+    data="{{routeData}}"
+    tail="{{subroute}}">
+</app-route>
+
+<iron-pages
+    selected="[[page]]"
+    attr-for-selected="name"
+    fallback-selection="index"
+    role="main">
+  <div name="index" class="card">
+    <div class="circle">3</div>
+    <h1>View Three</h1>
+    <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
+    <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
+    <paper-input placeholder="Insert a kebab-case route..." value="{{dynamicPath}}"></paper-input>
+    <a href="[[rootPath]]view3/[[dynamicPath]]" class="button">
+      <paper-button>
+        Go&nbsp;
+        <iron-icon icon="my-icons:chevron-right"></iron-icon>
+      </paper-button>
+    </a>
+  </div>
+  <my-dynamic-subview name="dynamic-subview" dynamic-path="[[dynamicPath]]"></my-dynamic-subview>
+</iron-pages>

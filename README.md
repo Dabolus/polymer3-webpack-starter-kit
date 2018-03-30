@@ -17,6 +17,8 @@ Features:
 - TypeScript with TSLint preconfigured, so that you can write reliable, high quality code
 - Using SCSS by default. Write less, do more!
 - Lazy-loading using the brand new [JavaScript dynamic import syntax](https://developers.google.com/web/updates/2017/11/dynamic-import)
+- A static and a dynamic subroute example, currently missing from the original Starter Kit.
+  This one has been added because it is not always so obvious how to use the router for a subroute
 - Shared styles and custom iconset, just like the original [PSK](https://github.com/Polymer/polymer-starter-kit)
 - Automatic service worker generation using [Workbox](https://github.com/GoogleChrome/workbox)
 - [Webpack 4](https://webpack.js.org) to bundle 'em all!
