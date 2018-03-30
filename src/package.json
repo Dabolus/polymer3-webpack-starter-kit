@@ -9,7 +9,9 @@
     "@polymer/iron-media-query": "^3.0.0-pre.12",
     "@polymer/iron-pages": "^3.0.0-pre.12",
     "@polymer/iron-selector": "^3.0.0-pre.12",
+    "@polymer/paper-button": "^3.0.0-pre.12",
     "@polymer/paper-icon-button": "^3.0.0-pre.12",
+    "@polymer/paper-input": "^3.0.0-pre.12",
     "@polymer/polymer": "^3.0.0-pre.12",
     "@webcomponents/webcomponentsjs": "^1.1.0"
   },
