@@ -5,11 +5,11 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer');
-const config = require('./app.config');
+const config = require('./app.config')(true);
 
 module.exports = {
   entry: {
-    ...config.transpile && { polyfills: 'babel-polyfill' },
+    ...config.app.transpile && { polyfills: 'babel-polyfill' },
     'wc/webcomponents-loader': '../src/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader',
     app: '../src/bootstrap',
   },
@@ -60,7 +60,7 @@ module.exports = {
               minimize: true,
             },
           },
-          ...config.transpile ? [{
+          ...config.app.transpile ? [{
             loader: 'postcss-loader',
             options: {
               ident: 'postcss',
@@ -77,7 +77,7 @@ module.exports = {
           },
         ],
       },
-      ...config.transpile ? [{
+      ...config.app.transpile ? [{
         test: /\.js$/,
         loader: 'babel-loader',
         options: {
@@ -90,7 +90,7 @@ module.exports = {
       {
         test: /\.ts$/,
         use: [
-          ...config.transpile ? [{
+          ...config.app.transpile ? [{
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env'],
@@ -123,8 +123,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin([config.outputDir], {root: resolve(__dirname, '..')}),
     new HtmlWebpackPlugin({
-      transpile: config.transpile,
-      basePath: config.basePath,
+      config,
       minify: {
         collapseWhitespace: true,
         removeComments: true,
