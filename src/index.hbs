@@ -1,3 +1,4 @@
+<!-- The `htmlWebpackPlugin.options.config` object contains all the variables declared in your `app.config.js` file -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -5,10 +6,10 @@
     <meta name="generator" content="Polymer 3 Webpack Starter Kit">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title>My App</title>
-    <meta name="description" content="My App description">
+    <title>{{htmlWebpackPlugin.options.config.app.name}}</title>
+    <meta name="description" content="{{htmlWebpackPlugin.options.config.app.description}}">
 
-    <base href="{{htmlWebpackPlugin.options.basePath}}">
+    <base href="{{htmlWebpackPlugin.options.config.app.basePath}}">
 
     <link rel="icon" href="images/favicon.ico">
 
@@ -40,7 +41,7 @@
     <meta name="msapplication-tap-highlight" content="no">
 
     <script>
-      window.Polymer = {rootPath: '{{htmlWebpackPlugin.options.basePath}}'};
+      window.Polymer = {rootPath: '{{htmlWebpackPlugin.options.config.app.basePath}}'};
       // Load and register pre-caching Service Worker
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function () {
@@ -51,7 +52,7 @@
       }
     </script>
 
-    {{#if htmlWebpackPlugin.options.transpile}}
+    {{#if htmlWebpackPlugin.options.config.app.transpile}}
     <!-- Load the elements adapter for es5 transpiled code -->
     <script src="scripts/wc/custom-elements-es5-adapter.js"></script>
     {{/if}}
@@ -63,7 +64,7 @@
         font-family: 'Roboto', 'Noto', sans-serif;
         line-height: 1.5;
         min-height: 100vh;
-        background-color: #eeeeee;
+        background-color: #eee;
       }
     </style>
   </head>

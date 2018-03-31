@@ -3,10 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const {HotModuleReplacementPlugin} = require('webpack');
-const config = require('./app.config');
+const config = require('./app.config')(false);
 
 const devServerUrl =
-  `${config.devServer.useHTTP2 ? 'https' : 'http'}://localhost:${config.devServer.port}${config.basePath}`;
+  `${config.devServer.useHTTP2 ? 'https' : 'http'}://localhost:${config.devServer.port}${config.app.basePath}`;
 
 module.exports = {
   entry: {
@@ -25,7 +25,7 @@ module.exports = {
     https: config.devServer.useHTTP2,
     compress: config.devServer.enableGzip,
     publicPath: devServerUrl,
-    openPage: config.basePath.substr(1), // remove the leading slash
+    openPage: config.app.basePath.substr(1), // remove the leading slash
   },
   output: {
     filename: 'scripts/[name].js',
@@ -71,7 +71,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dev'], {verbose: true, root: resolve(__dirname, '..')}),
     new HtmlWebpackPlugin({
-      basePath: config.basePath,
+      config,
       hash: true,
       inject: true,
       template: '!!handlebars-loader!../src/index.hbs',
