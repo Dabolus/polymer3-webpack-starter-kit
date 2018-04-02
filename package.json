@@ -13,5 +13,8 @@
     "serve": "cd ./conf && yarn serve && cd ..",
     "build": "cd ./conf && yarn build && cd ..",
     "deploy": "firebase deploy"
+  },
+  "engines": {
+    "node": ">=8.3"
   }
 }

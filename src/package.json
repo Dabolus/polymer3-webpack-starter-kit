@@ -15,5 +15,7 @@
     "@polymer/polymer": "^3.0.0-pre.12",
     "@webcomponents/webcomponentsjs": "^1.1.0"
   },
-  "devDependencies": {}
+  "engines": {
+    "node": ">=8.3"
+  }
 }
