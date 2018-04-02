@@ -32,7 +32,8 @@ to a specific page of this online preview. However, you can still switch from on
 once you've loaded the index._
 
 ### Setup
-- Install [Node.js](https://nodejs.org) (hopefully you already have it installed)
+- Install [Node.js](https://nodejs.org). Because of the syntax used in the configuration files,
+  at least `v8.3` is required. If you want to feel safe, the latest LTS will work well.
 - Install [yarn](https://yarnpkg.com)
 - Clone this repository
   ```bash
