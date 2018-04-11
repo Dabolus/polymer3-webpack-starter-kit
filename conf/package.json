@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "serve": "webpack-dev-server --open --config ./webpack.dev.conf.js",
+    "serve": "webpack-serve --config ./webpack.dev.conf.js",
     "build": "webpack --config ./webpack.prod.conf.js"
   },
   "devDependencies": {
@@ -12,6 +12,7 @@
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-polyfill": "^6.26.0",
     "clean-webpack-plugin": "^0.1.18",
+    "connect-history-api-fallback": "^1.5.0",
     "copy-webpack-plugin": "^4.5.0",
     "css-loader": "^0.28.10",
     "cssnano": "^3.10.0",
@@ -20,6 +21,8 @@
     "html-loader": "^0.5.5",
     "html-minifier": "^3.5.10",
     "html-webpack-plugin": "^3.0.4",
+    "koa-compressor": "^1.0.3",
+    "koa-connect": "^2.0.1",
     "node-sass": "^4.7.2",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^11.1.0",
@@ -35,7 +38,7 @@
     "webpack": "^4.1.0",
     "webpack-bundle-analyzer": "^2.11.1",
     "webpack-cli": "^2.0.10",
-    "webpack-dev-server": "^3.1.0",
+    "webpack-serve": "^0.3.1",
     "workbox-webpack-plugin": "^2.1.3"
   },
   "browserslist": [
