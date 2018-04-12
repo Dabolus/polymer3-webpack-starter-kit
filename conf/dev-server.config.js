@@ -9,12 +9,12 @@ const devServerUrl =
 
 module.exports = {
   content: resolve(__dirname, '../dev'),
-    hot: true,
+  hot: true,
   port: config.devServer.port,
   http2: config.devServer.useHTTP2,
   dev: {
-  publicPath: devServerUrl,
-},
+    publicPath: devServerUrl,
+  },
   open: {
     path: config.app.basePath.substr(1), // remove the leading slash
   },
