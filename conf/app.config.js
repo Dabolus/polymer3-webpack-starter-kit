@@ -46,7 +46,8 @@ module.exports = (production) => ({
 
     // Set this to true if you want webpack dev server
     // to serve your content over HTTP/2
-    useHTTP2: env.DEV_SERVER_USE_HTTP2 || false,
+    // THIS OPTION ISN'T CURRENTLY WORKING
+    // useHTTP2: env.DEV_SERVER_USE_HTTP2 || false,
 
     // Set this to true if you want webpack dev server
     // to gzip your content
