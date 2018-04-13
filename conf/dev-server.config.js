@@ -11,7 +11,7 @@ module.exports = {
   content: resolve(__dirname, '../dev'),
   hot: true,
   port: config.devServer.port,
-  http2: config.devServer.useHTTP2,
+  // http2: config.devServer.useHTTP2,
   dev: {
     publicPath: devServerUrl,
   },
