@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const WorkboxPlugin = require('workbox-webpack-plugin');
+const {InjectManifest: InjectManifestPlugin} = require('workbox-webpack-plugin');
 const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer');
 const config = require('./app.config')(true);
 
@@ -157,16 +157,10 @@ module.exports = {
         flatten: true,
       },
     ]),
-    new WorkboxPlugin({
-      globDirectory: resolve(__dirname, '..', config.outputDir),
-      globPatterns: ['*.html', 'scripts/*.js', 'scripts/wc/webcomponents-loader.js', 'manifest.json'],
+    new InjectManifestPlugin({
+      swSrc: resolve(__dirname, '../src/service-worker.js'),
       swDest: resolve(__dirname, '..', config.outputDir, 'sw.js'),
-      clientsClaim: true,
-      skipWaiting: true,
-      runtimeCaching: [{
-        urlPattern: /\/scripts\/wc\/.*\.js/,
-        handler: 'staleWhileRevalidate',
-      }],
+      exclude: [/webcomponents-(?!loader).*\.js$/, /images\/manifest/, /favicon\.ico$/],
     }),
     ...config.bundleAnalyzer.enabled ? [new BundleAnalyzerPlugin({
       analyzerHost: 'localhost',

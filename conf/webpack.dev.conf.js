@@ -1,6 +1,5 @@
 const {resolve} = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const {HotModuleReplacementPlugin} = require('webpack');
 const config = require('./app.config')(false);
@@ -55,7 +54,6 @@ module.exports = {
     extensions: ['.ts', '.js', '.scss', '.html']
   },
   plugins: [
-    new CleanWebpackPlugin(['dev'], {verbose: true, root: resolve(__dirname, '..')}),
     new HtmlWebpackPlugin({
       config,
       hash: true,
