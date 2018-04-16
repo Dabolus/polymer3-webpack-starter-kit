@@ -9,7 +9,7 @@ const config = require('./app.config')(true);
 
 module.exports = {
   entry: {
-    ...config.app.transpile && { polyfills: 'babel-polyfill' },
+    ...config.app.transpile && { polyfills: '@babel/polyfill' },
     'wc/webcomponents-loader': '../src/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader',
     app: '../src/bootstrap',
   },
