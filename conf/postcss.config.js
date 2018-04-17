@@ -2,8 +2,11 @@ module.exports = ({file, options}) => ({
   parser: 'postcss-safe-parser',
   plugins: {
     'postcss-import': {root: file.dirname},
-    'postcss-cssnext': {},
-    'autoprefixer': options.app.autoprefix ? {} : false,
-    'cssnano': options.production ? {} : false,
+    'postcss-cssnext': {
+      features: {
+        autoprefixer: options.app.autoprefix,
+      },
+    },
+    'cssnano': options.production ? {autoprefixer: false} : false,
   },
 });

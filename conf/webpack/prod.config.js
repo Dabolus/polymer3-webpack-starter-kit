@@ -1,29 +1,26 @@
 const {resolve} = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const {InjectManifest: InjectManifestPlugin} = require('workbox-webpack-plugin');
 const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer');
-const config = require('./app.config')(true);
+const config = require('../app.config')(true);
+const baseConfig = require('./base.config');
+const merge = require('webpack-merge');
 
-module.exports = {
-  entry: {
-    ...config.app.transpile && { polyfills: '@babel/polyfill' },
-    'wc/webcomponents-loader': '../src/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader',
-    app: '../src/bootstrap',
-  },
+module.exports = merge(baseConfig(config), {
   mode: 'production',
-  output: {
-    filename: 'scripts/[name].js',
-    chunkFilename: 'scripts/[name].js',
-    path: resolve(__dirname, '..', config.outputDir),
-  },
-  resolveLoader: {
-    alias: {
-      // Custom loaders
-      'minify-template-loader': resolve(__dirname, 'minify-template-loader.js'),
-    },
+  // We need to provide our own UglifyJS plugin to provide a custom configuration
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        extractComments: true,
+      }),
+    ],
   },
   module: {
     rules: [
@@ -32,7 +29,7 @@ module.exports = {
         enforce: 'pre',
         loader: 'tslint-loader',
         options: {
-          tsConfigFile: resolve(__dirname, '../tslint.json'),
+          tsConfigFile: resolve(__dirname, '../../tslint.json'),
           failOnHint: true,
           typeCheck: true,
           fix: true,
@@ -58,7 +55,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               config: {
-                path: resolve(__dirname, 'postcss.config.js'),
+                path: resolve(__dirname, '../postcss.config.js'),
                 ctx: config,
               },
             },
@@ -108,11 +105,8 @@ module.exports = {
       },
     ],
   },
-  resolve: {
-    extensions: ['.ts', '.js', '.scss', '.html']
-  },
   plugins: [
-    new CleanWebpackPlugin([config.outputDir], {root: resolve(__dirname, '..')}),
+    new CleanWebpackPlugin([config.outputDir], {root: resolve(__dirname, '../..')}),
     new HtmlWebpackPlugin({
       config,
       minify: {
@@ -137,20 +131,20 @@ module.exports = {
     // copy custom static assets
     new CopyWebpackPlugin([
       {
-        from: resolve(__dirname, '../src/static/'),
+        from: resolve(__dirname, '../../src/static/'),
         to: '.',
         ignore: ['.*', 'sw.js']
       },
       {
-        from: resolve(__dirname, '../src/node_modules/@webcomponents/webcomponentsjs/*.js'),
+        from: resolve(__dirname, '../../src/node_modules/@webcomponents/webcomponentsjs/*.js'),
         to: './scripts/wc',
         ignore: ['gulpfile.js', 'webcomponents-loader.js'],
         flatten: true,
       },
     ]),
     new InjectManifestPlugin({
-      swSrc: resolve(__dirname, '../src/service-worker.js'),
-      swDest: resolve(__dirname, '..', config.outputDir, 'sw.js'),
+      swSrc: resolve(__dirname, '../../src/service-worker.js'),
+      swDest: resolve(__dirname, '../..', config.outputDir, 'sw.js'),
       exclude: [/webcomponents-(?!loader).*\.js$/, /images\/manifest/, /favicon\.ico$/],
     }),
     ...config.bundleAnalyzer.enabled ? [new BundleAnalyzerPlugin({
@@ -158,4 +152,4 @@ module.exports = {
       analyzerPort: config.bundleAnalyzer.port,
     })] : [],
   ],
-};
+});
