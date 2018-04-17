@@ -1,9 +1,9 @@
-module.exports = {
-  parser: 'sugarss',
+module.exports = ({file, options}) => ({
+  parser: 'postcss-safe-parser',
   plugins: {
-    'postcss-import': {},
+    'postcss-import': {root: file.dirname},
     'postcss-cssnext': {},
-    'autoprefixer': {},
-    'cssnano': {},
+    'autoprefixer': options.app.autoprefix ? {} : false,
+    'cssnano': options.production ? {} : false,
   },
-};
+});

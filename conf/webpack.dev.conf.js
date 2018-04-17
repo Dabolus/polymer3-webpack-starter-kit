@@ -41,7 +41,23 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ['to-string-loader', 'css-loader', 'sass-loader'],
+        use: [
+          {
+            loader: 'to-string-loader',
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                path: resolve(__dirname, 'postcss.config.js'),
+                ctx: config,
+              },
+            },
+          },
+          {
+            loader: 'sass-loader',
+          },
+        ],
       },
       {
         test: /\.ts$/,
