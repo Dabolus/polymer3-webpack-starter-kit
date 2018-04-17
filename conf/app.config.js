@@ -13,6 +13,8 @@
 const env = require('./typify-env')(process.env);
 
 module.exports = (production) => ({
+  production,
+
   // The output directory of your built project,
   // relative to the project dir.
   // e.g. The default value will output your project to
@@ -34,9 +36,12 @@ module.exports = (production) => ({
     description: env.APP_DESCRIPTION || 'My App description',
 
     // Whether to transpile the app for older browsers or not.
-    // Setting this variable to true will both transpile the JS code
-    // and use PostCSS to autoprefix your CSS
     transpile: env.APP_TRANSPILE || false,
+
+    // Whether to autoprefix the css rules for the app based on you "browserslist"
+    // field in package.json.
+    // By default, your app will be autoprefixed when in production mode
+    autoprefix: env.APP_AUTOPREFIX || production,
   },
 
   // Webpack dev server settings

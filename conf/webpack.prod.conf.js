@@ -55,23 +55,14 @@ module.exports = {
             loader: 'to-string-loader',
           },
           {
-            loader: 'css-loader',
-            options: {
-              minimize: true,
-            },
-          },
-          ...config.app.transpile ? [{
             loader: 'postcss-loader',
             options: {
-              ident: 'postcss',
-              plugins: (loader) => {
-                require('postcss-import')({ root: loader.resourcePath }),
-                require('postcss-cssnext')(),
-                require('autoprefixer')(),
-                require('cssnano')()
+              config: {
+                path: resolve(__dirname, 'postcss.config.js'),
+                ctx: config,
               },
             },
-          }] : [],
+          },
           {
             loader: 'sass-loader',
           },
