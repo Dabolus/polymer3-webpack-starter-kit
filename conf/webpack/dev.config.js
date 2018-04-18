@@ -2,21 +2,15 @@ const {resolve} = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const {HotModuleReplacementPlugin} = require('webpack');
-const config = require('./app.config')(false);
+const config = require('../app.config')(false);
+const baseConfig = require('./base.config');
 const devServerConfig = require('./dev-server.config');
+const merge = require('webpack-merge');
 
-module.exports = {
-  entry: {
-    app: '../src/bootstrap',
-  },
+module.exports = merge(baseConfig(config), {
   mode: 'development',
   devtool: 'inline-source-map',
   serve: devServerConfig,
-  output: {
-    filename: 'scripts/[name].js',
-    chunkFilename: 'scripts/[name].js',
-    path: resolve(__dirname, '../dev'),
-  },
   module: {
     rules: [
       {
@@ -24,7 +18,7 @@ module.exports = {
         enforce: 'pre',
         loader: 'tslint-loader',
         options: {
-          tsConfigFile: resolve(__dirname, '../tslint.json'),
+          tsConfigFile: resolve(__dirname, '../../tslint.json'),
           failOnHint: true,
           typeCheck: true,
           fix: true,
@@ -49,7 +43,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               config: {
-                path: resolve(__dirname, 'postcss.config.js'),
+                path: resolve(__dirname, '../postcss.config.js'),
                 ctx: config,
               },
             },
@@ -66,9 +60,6 @@ module.exports = {
       },
     ],
   },
-  resolve: {
-    extensions: ['.ts', '.js', '.scss', '.html']
-  },
   plugins: [
     new HtmlWebpackPlugin({
       config,
@@ -79,17 +70,17 @@ module.exports = {
     // copy custom static assets
     new CopyWebpackPlugin([
       {
-        from: resolve(__dirname, '../src/static/'),
+        from: resolve(__dirname, '../../src/static/'),
         to: '.',
         ignore: ['.*']
       },
       {
-        from: resolve(__dirname, '../src/node_modules/@webcomponents/webcomponentsjs/*.js'),
+        from: resolve(__dirname, '../../src/node_modules/@webcomponents/webcomponentsjs/*.js'),
         to: '.',
         ignore: ['gulpfile.js'],
         flatten: true,
       },
     ]),
     new HotModuleReplacementPlugin(),
-  ]
-};
+  ],
+});

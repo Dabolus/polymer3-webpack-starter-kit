@@ -2,7 +2,7 @@ const {resolve} = require('path');
 const compress = require('koa-compressor');
 const history = require('connect-history-api-fallback');
 const convert = require('koa-connect');
-const config = require('./app.config')(false);
+const config = require('../app.config')(false);
 
 const devServerUrl =
   `${config.devServer.useHTTP2 ? 'https' : 'http'}://localhost:${config.devServer.port}${config.app.basePath}`;
