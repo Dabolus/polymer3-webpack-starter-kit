@@ -21,6 +21,13 @@ module.exports = merge(baseConfig(config), {
         extractComments: true,
       }),
     ],
+    splitChunks: {
+      // TODO: Checkout why this option isn't working.
+      // The default value is 'async', but setting it to 'all' is suggested.
+      // See https://github.com/webpack/webpack.js.org/blob/master/src/content/plugins/split-chunks-plugin.md#optimizationsplitchunkschunks-all
+      // chunks: 'all',
+      name: false,
+    },
   },
   module: {
     rules: [

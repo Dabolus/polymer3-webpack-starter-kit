@@ -9,7 +9,7 @@ module.exports = (config) => ({
   },
   output: {
     filename: 'scripts/[name].js',
-    chunkFilename: 'scripts/[name].js',
+    chunkFilename: 'scripts/components/[id].js',
     path: resolve(__dirname, '../..', config.outputDir),
   },
   resolveLoader: {

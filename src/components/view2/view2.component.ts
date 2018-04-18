@@ -52,7 +52,6 @@ export class MyView2 extends PolymerElement {
   _pageChanged(page: string) {
     // Load page import on demand. Show 404 page if fails
     import(
-      /* webpackChunkName: "[request]" */
       /* webpackMode: "lazy" */
       `./${page}/${page}.component`
       ).catch(this._showPage404.bind(this));
