@@ -1,15 +1,4 @@
-declare module '*.html' {
-  const content: string;
-  export default content;
-}
-
-declare module '*.scss' {
-  const content: string;
-  export default content;
-}
-
 declare module '@polymer/polymer/polymer-element' {
-  // noinspection TsLint
   export const PolymerElement: any;
   export const html: any;
 }

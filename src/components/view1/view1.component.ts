@@ -15,4 +15,5 @@ export class MyView1 extends PolymerElement {
     return `<style include="shared-styles">${style}</style>${view}`;
   }
 }
+
 window.customElements.define(MyView1.is, MyView1);
