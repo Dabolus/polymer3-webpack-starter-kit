@@ -142,10 +142,16 @@ module.exports = merge(baseConfig(config), {
         to: '.',
         ignore: ['.*', 'sw.js']
       },
+      // Custom Elements ES5 adapter
       {
-        from: resolve(__dirname, '../../src/node_modules/@webcomponents/webcomponentsjs/*.js'),
+        from: resolve(__dirname, '../../src/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'),
         to: './scripts/wc',
-        ignore: ['gulpfile.js', 'webcomponents-loader.js'],
+        flatten: true,
+      },
+      // WebComponents Polyfills
+      {
+        from: resolve(__dirname, '../../src/node_modules/@webcomponents/webcomponentsjs/bundles/**/*'),
+        to: './scripts/wc/bundles',
         flatten: true,
       },
     ]),
