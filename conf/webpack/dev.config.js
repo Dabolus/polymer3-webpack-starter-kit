@@ -76,8 +76,8 @@ module.exports = merge(baseConfig(config), {
       },
       {
         from: resolve(__dirname, '../../src/node_modules/@webcomponents/webcomponentsjs/*.js'),
-        to: '.',
-        ignore: ['gulpfile.js'],
+        to: './scripts/wc',
+        ignore: ['gulpfile.js', 'webcomponents-loader.js'],
         flatten: true,
       },
     ]),
