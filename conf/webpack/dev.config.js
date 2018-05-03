@@ -1,5 +1,6 @@
 const {resolve} = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const {HotModuleReplacementPlugin} = require('webpack');
 const config = require('../app.config')(false);
@@ -67,6 +68,9 @@ module.exports = merge(baseConfig(config), {
       inject: true,
       template: '!!handlebars-loader!../src/index.hbs',
     }),
+    new ScriptExtHtmlWebpackPlugin({
+      defer: ['webcomponents-loader.js', 'app.js'],
+    }),
     // copy custom static assets
     new CopyWebpackPlugin([
       {
@@ -74,10 +78,16 @@ module.exports = merge(baseConfig(config), {
         to: '.',
         ignore: ['.*']
       },
+      // Custom Elements ES5 adapter
       {
-        from: resolve(__dirname, '../../src/node_modules/@webcomponents/webcomponentsjs/*.js'),
+        from: resolve(__dirname, '../../src/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'),
         to: './scripts/wc',
-        ignore: ['gulpfile.js', 'webcomponents-loader.js'],
+        flatten: true,
+      },
+      // WebComponents Polyfills
+      {
+        from: resolve(__dirname, '../../src/node_modules/@webcomponents/webcomponentsjs/bundles/**/*'),
+        to: './scripts/wc/bundles',
         flatten: true,
       },
     ]),

@@ -22,3 +22,8 @@ declare module '@polymer/polymer/lib/utils/settings' {
   export const setSanitizeDOMValue: (newSanitizeDOMValue: any) => void;
   export const setPassiveTouchGestures: (usePassive: boolean) => void;
 }
+
+declare module WebComponents {
+  export const ready: boolean;
+  export const waitFor: (callback: () => Promise<any>) => void;
+}

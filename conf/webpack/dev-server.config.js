@@ -1,5 +1,5 @@
 const {resolve} = require('path');
-const compress = require('koa-compressor');
+const compress = require('koa-compress');
 const history = require('connect-history-api-fallback');
 const convert = require('koa-connect');
 const config = require('../app.config')(false);
