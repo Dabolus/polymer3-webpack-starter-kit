@@ -4,8 +4,8 @@ const customLoaders = require('./custom-loaders');
 module.exports = (config) => ({
   entry: {
     ...config.app.transpile && { polyfills: '@babel/polyfill' },
-    'wc/webcomponents-loader': '../src/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader',
-    app: '../src/bootstrap',
+    'wc/webcomponents-loader': resolve(__dirname, '../../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader'),
+    app: resolve(__dirname, '../../src/bootstrap'),
   },
   output: {
     filename: 'scripts/[name].js',

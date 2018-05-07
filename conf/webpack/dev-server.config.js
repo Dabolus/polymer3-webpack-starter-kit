@@ -8,7 +8,7 @@ const devServerUrl =
   `${config.devServer.useHTTP2 ? 'https' : 'http'}://localhost:${config.devServer.port}${config.app.basePath}`;
 
 module.exports = {
-  content: resolve(__dirname, '../dev'),
+  content: resolve(__dirname, '../..', config.outputDir),
   hot: true,
   port: config.devServer.port,
   // http2: config.devServer.useHTTP2,

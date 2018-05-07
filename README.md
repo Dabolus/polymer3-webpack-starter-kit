@@ -54,14 +54,6 @@ once you've loaded the index._
 
 ### Available scripts
 ```bash
-yarn frontend [...args]
-# Will execute any yarn command passed as arg on the frontend package
-# e.g. yarn frontend add @polymer/paper-fab@next
-
-yarn conf [...args]
-# Will execute any yarn command passed as arg on the configuration package
-# e.g. yarn conf add --dev htmllint htmllint-loader
-
 yarn serve
 # Starts webpack dev server with live reload on http://localhost:8080
 
@@ -71,10 +63,6 @@ yarn build
 # If you wish to change this behavior, you can set the basePath
 # variable to whatever you want the base path to be inside conf/app.config.js
 # REMEMBER TO ADD THE LEADING AND TRAILING SLASHES
-
-yarn install
-# Installing the dependencies on the main package will automatically install
-# the dependencies on both the frontend and the conf package
 
 yarn deploy [...args]
 # Alias of 'firebase deploy'. The args will be passed to firebase
@@ -136,20 +124,12 @@ else at you needs.
       <code>Contains some configuration variables used all around the project</code>
     </details>
     <details>
-      <summary><code>│   ├── package.json</code></summary>
-      <code>The package.json dedicated to the app testing and configuration. It contains all the dev dependencies needed to test and build the app, as well as some useful scripts</code>
-    </details>
-    <details>
       <summary><code>│   ├── postcss.config.js</code></summary>
       <code>PostCSS configuration file</code>
     </details>
     <details>
-      <summary><code>│   ├── typify-env.js</code></summary>
+      <summary><code>│   └── typify-env.js</code></summary>
       <code>An helper used to typify the environment variables (it detects whether an environment variable is a boolean, a number or a string)</code>
-    </details>
-    <details>
-      <summary><code>│   └── yarn.lock</code></summary>
-      <code>Yarn lockfile for the configuration section</code>
     </details>
   </details>
   <details>
@@ -388,20 +368,12 @@ else at you needs.
       <code>The index of our app, as an Handlebars template. Having an HBS file allows us to build the HTML with some basic logic, like referencing some scripts only if some condition happens</code>
     </details>
     <details>
-      <summary><code>│   ├── package.json</code></summary>
-      <code>The package.json dedicated to the app source code. It contains all the frontend dependencies, and it is configured to flat install the dependencies. This means that only one version of each dependency will be installed</code>
-    </details>
-    <details>
       <summary><code>│   ├── service-worker.js</code></summary>
       <code>Description</code>
     </details>
     <details>
-      <summary><code>│   ├── typings.d.ts</code></summary>
+      <summary><code>│   └── typings.d.ts</code></summary>
       <code>It contains the custom typings for our app, i.e. the ones that are not bundled with the library we install and are not installable via @types/library</code>
-    </details>
-    <details>
-      <summary><code>│   └── yarn.lock</code></summary>
-      <code>Yarn lockfile for the app source section</code>
     </details>
   </details>
   <details>
@@ -422,7 +394,7 @@ else at you needs.
   </details>
   <details>
     <summary><code>├── package.json</code></summary>
-    <code>The project main package.json. It contains our app information (name, description, version, etc), as well as the scripts to test and build the app</code>
+    <code>The project main package.json. It contains our app information (name, description, version, etc) and dependencies, as well as the scripts to test, build and deploy the app</code>
   </details>
   <details>
     <summary><code>├── README.md</code></summary>
@@ -443,45 +415,6 @@ else at you needs.
 </details>
 
 ---
-
-You might have noticed something strange in the project structure, so let me answer that big
-question: **Why are there THREE package.json?**
-
-Trust me, even if it might seem absurd, this is actually the best way to prevent you A LOT
-of headaches. Basically, the whole thing works like this:
-
-The choice of making three different packages is given by the fact that Polymer requires
-its components to be installed as `flat` dependencies, while Webpack and most of the tools
-around there want you to install them as normal dependencies. This causes a lot of
-different problems:
-1. If you choose to install Polymer components without the `flat` flag in your `package.json`,
-   Polymer would be buggy, or it won't work at all
-2. If you choose to install other dependencies with the `flat` flag in your `package.json`,
-   you'd have to choose a resolution for each dependency of your dependency dependencies
-   (great wordplay, right?). This will give you a lot of extra work, and each new library
-   you add is not guaranteed to work with the resolutions you had to choose for the previously
-   installed libraries
-3. You might choose to use a `package.json` without the `flat` flag, and then install the
-   Polymer components using the `--flat` CLI flag, but you'd have to remember to had that
-   flag every time you install a new component
-4. You might choose to use to different `package.json`, one to handle normal dependencies,
-   and one to handle flat dependencies. This will avoid most of the problems, but you'd
-   have to switch between the two directories every time you have to add a new dependency,
-   and you are lazy, aren't you?
-
-So, the solution I adopted is to you three different `package.json`, each one with its own
-goal and logic.
-- The `package.json` located in the root of the project represents your main package.
-  You might probably want to add there your app name, version, description, etc.
-  As you can see, it doesn't have any dependency installed. That's because it is only
-  used to declare some tasks that will allow you to easily handle your project
-- The `package.json` located in the `conf/` directory is the one used by Webpack
-  and its plugins. It doesn't use a flat dependency tree
-- The `package.json` located in the `src/` directory is the one used by your frontend.
-  It uses a flat dependency tree, so it is the perfect place to install all your Polymer
-  elements
-Don't like it? Well, that's just a starter kit, so you can do whatever you want
-with it, even completely change its structure :P
 
 ### Contributing
 **PRs are welcome!**
