@@ -54,14 +54,6 @@ once you've loaded the index._
 
 ### Available scripts
 ```bash
-yarn frontend [...args]
-# Will execute any yarn command passed as arg on the frontend package
-# e.g. yarn frontend add @polymer/paper-fab@next
-
-yarn conf [...args]
-# Will execute any yarn command passed as arg on the configuration package
-# e.g. yarn conf add --dev htmllint htmllint-loader
-
 yarn serve
 # Starts webpack dev server with live reload on http://localhost:8080
 
@@ -71,10 +63,6 @@ yarn build
 # If you wish to change this behavior, you can set the basePath
 # variable to whatever you want the base path to be inside conf/app.config.js
 # REMEMBER TO ADD THE LEADING AND TRAILING SLASHES
-
-yarn install
-# Installing the dependencies on the main package will automatically install
-# the dependencies on both the frontend and the conf package
 
 yarn deploy [...args]
 # Alias of 'firebase deploy'. The args will be passed to firebase
