@@ -52,26 +52,6 @@ module.exports = merge(baseConfig(config), {
           },
         },
       },
-      {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: 'to-string-loader',
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              config: {
-                path: resolve(__dirname, '../postcss.config.js'),
-                ctx: config,
-              },
-            },
-          },
-          {
-            loader: 'sass-loader',
-          },
-        ],
-      },
       ...config.app.transpile ? [{
         test: /\.js$/,
         loader: 'babel-loader',
