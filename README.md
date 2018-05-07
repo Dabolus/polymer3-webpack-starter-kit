@@ -2,8 +2,12 @@
   <img src="https://dabolus.github.io/polymer3-webpack-starter-kit/p+w.svg">
 </p>
 <h1 align="center">Polymer 3 Starter Kit with Webpack</h1>
-
-[![Build Status](https://travis-ci.org/Dabolus/polymer3-webpack-starter-kit.svg?branch=master)](https://travis-ci.org/Dabolus/polymer3-webpack-starter-kit)
+<p align="center">
+  <a href="https://travis-ci.org/Dabolus/polymer3-webpack-starter-kit"><img src="https://travis-ci.org/Dabolus/polymer3-webpack-starter-kit.svg?branch=master" alt="Build Status"></a>
+  <a href="https://david-dm.org/Dabolus/polymer3-webpack-starter-kit"><img src="https://david-dm.org/Dabolus/polymer3-webpack-starter-kit/status.svg" alt="Dependencies Status"></a>
+  <a href="https://david-dm.org/Dabolus/polymer3-webpack-starter-kit?type=dev"><img src="https://david-dm.org/Dabolus/polymer3-webpack-starter-kit/dev-status.svg" alt="Dev Dependencies Status"></a>
+  <a href="https://codeclimate.com/github/Dabolus/polymer3-webpack-starter-kit/maintainability"><img src="https://api.codeclimate.com/v1/badges/e7c87e529be2722569ae/maintainability" alt="Maintainability"></a>
+</p>
 
 Want to use the latest Polymer 3 but you don't know how to get started?
 Got you covered!

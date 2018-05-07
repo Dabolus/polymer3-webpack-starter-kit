@@ -15,17 +15,6 @@ module.exports = merge(baseConfig(config), {
   module: {
     rules: [
       {
-        test: /\.ts$/,
-        enforce: 'pre',
-        loader: 'tslint-loader',
-        options: {
-          tsConfigFile: resolve(__dirname, '../../tslint.json'),
-          failOnHint: true,
-          typeCheck: true,
-          fix: true,
-        },
-      },
-      {
         test: /\.html$/,
         use: {
           loader: 'html-loader',
@@ -33,26 +22,6 @@ module.exports = merge(baseConfig(config), {
             exportAsEs6Default: true,
           },
         },
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: 'to-string-loader',
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              config: {
-                path: resolve(__dirname, '../postcss.config.js'),
-                ctx: config,
-              },
-            },
-          },
-          {
-            loader: 'sass-loader',
-          },
-        ],
       },
       {
         test: /\.ts$/,

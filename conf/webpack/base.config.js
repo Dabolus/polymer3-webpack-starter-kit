@@ -19,6 +19,30 @@ module.exports = (config) => ({
     alias: customLoaders,
   },
   resolve: {
-    extensions: ['.ts', '.js', '.scss', '.html']
+    extensions: ['.ts', '.js', '.scss', '.sass', '.html'],
+  },
+  module: {
+    rules: [
+      {
+        test: /\.s[ac]ss$/,
+        use: [
+          {
+            loader: 'to-string-loader',
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                path: resolve(__dirname, '../postcss.config.js'),
+                ctx: config,
+              },
+            },
+          },
+          {
+            loader: 'sass-loader',
+          },
+        ],
+      },
+    ],
   },
 });
