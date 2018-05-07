@@ -4,6 +4,9 @@
 <h1 align="center">Polymer 3 Starter Kit with Webpack</h1>
 
 [![Build Status](https://travis-ci.org/Dabolus/polymer3-webpack-starter-kit.svg?branch=master)](https://travis-ci.org/Dabolus/polymer3-webpack-starter-kit)
+[![Dependencies Status](https://david-dm.org/Dabolus/polymer3-webpack-starter-kit/status.svg)](https://david-dm.org/Dabolus/polymer3-webpack-starter-kit)
+[![Dev Dependencies Status](https://david-dm.org/Dabolus/polymer3-webpack-starter-kit/dev-status.svg)](https://david-dm.org/Dabolus/polymer3-webpack-starter-kit?type=dev)
+[![Maintainability](https://api.codeclimate.com/v1/badges/e7c87e529be2722569ae/maintainability)](https://codeclimate.com/github/Dabolus/polymer3-webpack-starter-kit/maintainability)
 
 Want to use the latest Polymer 3 but you don't know how to get started?
 Got you covered!
