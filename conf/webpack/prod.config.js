@@ -130,7 +130,7 @@ module.exports = merge(baseConfig(config), {
       },
       hash: true,
       inject: true,
-      template: '!!handlebars-loader!../src/index.hbs',
+      template: `!!handlebars-loader!${resolve(__dirname, '../../src/index.hbs')}`,
     }),
     new ScriptExtHtmlWebpackPlugin({
       defer: ['webcomponents-loader.js', 'app.js'],
@@ -144,13 +144,13 @@ module.exports = merge(baseConfig(config), {
       },
       // Custom Elements ES5 adapter
       {
-        from: resolve(__dirname, '../../src/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'),
+        from: resolve(__dirname, '../../node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'),
         to: './scripts/wc',
         flatten: true,
       },
       // WebComponents Polyfills
       {
-        from: resolve(__dirname, '../../src/node_modules/@webcomponents/webcomponentsjs/bundles/**/*'),
+        from: resolve(__dirname, '../../node_modules/@webcomponents/webcomponentsjs/bundles/**/*'),
         to: './scripts/wc/bundles',
         flatten: true,
       },
