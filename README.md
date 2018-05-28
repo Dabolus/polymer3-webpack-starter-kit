@@ -7,6 +7,7 @@
   <a href="https://david-dm.org/Dabolus/polymer3-webpack-starter-kit"><img src="https://david-dm.org/Dabolus/polymer3-webpack-starter-kit/status.svg" alt="Dependencies Status"></a>
   <a href="https://david-dm.org/Dabolus/polymer3-webpack-starter-kit?type=dev"><img src="https://david-dm.org/Dabolus/polymer3-webpack-starter-kit/dev-status.svg" alt="Dev Dependencies Status"></a>
   <a href="https://codeclimate.com/github/Dabolus/polymer3-webpack-starter-kit/maintainability"><img src="https://api.codeclimate.com/v1/badges/e7c87e529be2722569ae/maintainability" alt="Maintainability"></a>
+  <a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/Dabolus/polymer3-webpack-starter-kit.svg" alt="Greenkeeper"></a>
 </p>
 
 Want to use the latest Polymer 3 but you don't know how to get started?
@@ -29,8 +30,6 @@ Features:
 - Basic [Firebase](https://firebase.google.com/) configuration to allow easy deployment out of the box
 
 ### Preview
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/Dabolus/polymer3-webpack-starter-kit.svg)](https://greenkeeper.io/)
 
 You can see an online preview of the project on my [Github Pages](https://dabolus.github.io/polymer3-webpack-starter-kit/).
 
