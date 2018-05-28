@@ -30,7 +30,6 @@ Features:
 - Basic [Firebase](https://firebase.google.com/) configuration to allow easy deployment out of the box
 
 ### Preview
-
 You can see an online preview of the project on my [Github Pages](https://dabolus.github.io/polymer3-webpack-starter-kit/).
 
 _Note that GH Pages does not currently support routing all the requests to an index.html, so you won't be able to link
