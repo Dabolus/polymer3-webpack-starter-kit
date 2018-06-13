@@ -1,4 +1,4 @@
-import {PolymerElement} from '@polymer/polymer/polymer-element';
+import {PolymerElement, html} from '@polymer/polymer/polymer-element';
 import view from './subview3.template.html';
 import style from './subview3.style.scss';
 import '../../shared-styles';
@@ -12,7 +12,7 @@ export class MySubview3 extends PolymerElement {
   }
 
   static get template() {
-    return `<style include="shared-styles">${style}</style>${view}`;
+    return html([`<style include="shared-styles">${style}</style>${view}`]);
   }
 }
 
