@@ -1,4 +1,4 @@
-import {PolymerElement} from '@polymer/polymer/polymer-element';
+import {PolymerElement, html} from '@polymer/polymer/polymer-element';
 import view from './view404.template.html';
 import style from './view404.style.scss';
 import '../shared-styles';
@@ -11,7 +11,7 @@ export class MyView404 extends PolymerElement {
   }
 
   static get template() {
-    return `<style include="shared-styles">${style}</style>${view}`;
+    return html([`<style include="shared-styles">${style}</style>${view}`]);
   }
 }
 

@@ -1,4 +1,4 @@
-import {PolymerElement} from '@polymer/polymer/polymer-element';
+import {PolymerElement, html} from '@polymer/polymer/polymer-element';
 import '@polymer/app-route/app-location';
 import '@polymer/app-route/app-route';
 import '@polymer/iron-pages/iron-pages';
@@ -17,7 +17,7 @@ export class MyView2 extends PolymerElement {
   }
 
   static get template() {
-    return `<style include="shared-styles">${style}</style>${view}`;
+    return html([`<style include="shared-styles">${style}</style>${view}`]);
   }
 
   static get properties() {
