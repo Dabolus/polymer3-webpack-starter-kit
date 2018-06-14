@@ -1,4 +1,4 @@
-import {PolymerElement} from '@polymer/polymer/polymer-element';
+import {PolymerElement, html} from '@polymer/polymer/polymer-element';
 
 import view from './view1.template.html';
 import style from './view1.style.scss';
@@ -12,7 +12,7 @@ export class MyView1 extends PolymerElement {
   }
 
   static get template() {
-    return `<style include="shared-styles">${style}</style>${view}`;
+    return html([`<style include="shared-styles">${style}</style>${view}`]);
   }
 }
 window.customElements.define(MyView1.is, MyView1);

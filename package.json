@@ -12,17 +12,17 @@
     "deploy": "firebase deploy"
   },
   "dependencies": {
-    "@polymer/app-layout": "^3.0.0-pre.13",
-    "@polymer/app-route": "^3.0.0-pre.13",
-    "@polymer/iron-flex-layout": "^3.0.0-pre.13",
-    "@polymer/iron-iconset-svg": "^3.0.0-pre.13",
-    "@polymer/iron-media-query": "^3.0.0-pre.13",
-    "@polymer/iron-pages": "^3.0.0-pre.13",
-    "@polymer/iron-selector": "^3.0.0-pre.13",
-    "@polymer/paper-button": "^3.0.0-pre.13",
-    "@polymer/paper-icon-button": "^3.0.0-pre.13",
-    "@polymer/paper-input": "^3.0.0-pre.13",
-    "@polymer/polymer": "^3.0.0-pre.13",
+    "@polymer/app-layout": "^3.0.0-pre.19",
+    "@polymer/app-route": "^3.0.0-pre.19",
+    "@polymer/iron-flex-layout": "^3.0.0-pre.19",
+    "@polymer/iron-iconset-svg": "^3.0.0-pre.19",
+    "@polymer/iron-media-query": "^3.0.0-pre.19",
+    "@polymer/iron-pages": "^3.0.0-pre.19",
+    "@polymer/iron-selector": "^3.0.0-pre.19",
+    "@polymer/paper-button": "^3.0.0-pre.19",
+    "@polymer/paper-icon-button": "^3.0.0-pre.19",
+    "@polymer/paper-input": "^3.0.0-pre.19",
+    "@polymer/polymer": "^3.0.0",
     "@webcomponents/webcomponentsjs": "^2.0.0-beta.2"
   },
   "devDependencies": {

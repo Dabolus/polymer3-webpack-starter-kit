@@ -1,4 +1,4 @@
-import {PolymerElement} from '@polymer/polymer/polymer-element';
+import {PolymerElement, html} from '@polymer/polymer/polymer-element';
 import view from './dynamic-subview.template.html';
 import style from './dynamic-subview.style.scss';
 import '../../shared-styles';
@@ -12,7 +12,7 @@ export class MyDynamicSubview extends PolymerElement {
   }
 
   static get template() {
-    return `<style include="shared-styles">${style}</style>${view}`;
+    return html([`<style include="shared-styles">${style}</style>${view}`]);
   }
 
   static get properties() {
