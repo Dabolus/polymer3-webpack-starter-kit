@@ -1,7 +1,7 @@
 const {resolve} = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const {InjectManifest: InjectManifestPlugin} = require('workbox-webpack-plugin');
@@ -12,10 +12,10 @@ const merge = require('webpack-merge');
 
 module.exports = merge(baseConfig(config), {
   mode: 'production',
-  // We need to provide our own UglifyJS plugin to provide a custom configuration
+  // We need to provide our own Terser plugin to provide a custom configuration
   optimization: {
     minimizer: [
-      new UglifyJsPlugin({
+      new TerserPlugin({
         cache: true,
         parallel: true,
         extractComments: true,
