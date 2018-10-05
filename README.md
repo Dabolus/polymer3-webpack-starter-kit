@@ -1,3 +1,10 @@
+> _**Note:** I'm currently working on a major webpack config update for this Starter Kit
+> that will remove all the out of date dependencies._
+>
+> _After that, **this project will go into maintenance mode**. This means that **I won't update it anymore**,
+> I will just keep updating its dependencies to keep it fresh._
+
+
 <p align="center">
   <img src="https://dabolus.github.io/polymer3-webpack-starter-kit/p+w.svg">
 </p>
