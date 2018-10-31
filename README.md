@@ -4,10 +4,6 @@
 > _After that, **this project will go into maintenance mode**. This means that **I won't update it anymore**,
 > I will just keep updating its dependencies to keep it fresh._
 
-
-<p align="center">
-  <img src="https://dabolus.github.io/polymer3-webpack-starter-kit/p+w.svg">
-</p>
 <h1 align="center">Polymer 3 Starter Kit with Webpack</h1>
 <p align="center">
   <a href="https://travis-ci.org/Dabolus/polymer3-webpack-starter-kit"><img src="https://travis-ci.org/Dabolus/polymer3-webpack-starter-kit.svg?branch=master" alt="Build Status"></a>
