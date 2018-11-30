@@ -1,8 +1,7 @@
-> _**Note:** I'm currently working on a major webpack config update for this Starter Kit
-> that will remove all the out of date dependencies._
->
-> _After that, **this project will go into maintenance mode**. This means that **I won't update it anymore**,
-> I will just keep updating its dependencies to keep it fresh._
+> _**Note:** following Polymer 3, **this project is now in maintenance mode**. This means that
+> **it won't receive new features**, I will just keep updating its deps to keep it fresh.
+> To write vanilla progressive web applications with web components, use the
+> [PWA Webpack Starter Kit](https://github.com/Dabolus/pwa-webpack-starter-kit) instead._
 
 <h1 align="center">Polymer 3 Starter Kit with Webpack</h1>
 <p align="center">
