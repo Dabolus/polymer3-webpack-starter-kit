@@ -34,7 +34,7 @@
     "caniuse-lite": "^1.0.30000925",
     "clean-webpack-plugin": "^1.0.0",
     "connect-history-api-fallback": "^1.5.0",
-    "copy-webpack-plugin": "^4.6.0",
+    "copy-webpack-plugin": "^5.0.1",
     "cssnano": "^4.1.8",
     "handlebars": "^4.0.12",
     "handlebars-loader": "^1.7.1",
