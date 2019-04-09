@@ -1003,10 +1003,10 @@
   resolved "https://registry.yarnpkg.com/@webcomponents/shadycss/-/shadycss-1.7.1.tgz#dba82c431449d2250b49f60db495d05f477882d0"
   integrity sha512-6SZqLajRPWL0rrKDZOGF8PCBq5B9JqgFmE5rX5psk6i8WrqiMkSCuO8+rnirzViTsU5CqnjQPFC3OvG4YJdMrQ==
 
-"@webcomponents/webcomponentsjs@^2.2.1":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@webcomponents/webcomponentsjs/-/webcomponentsjs-2.2.1.tgz#bf28cdad466aaf85d88ee56aebed32c83f4c1328"
-  integrity sha512-lZZ+Lkke6JhsJcQQqSVk1Pny6/8y4qhJ98LO7a/MwBSRO8WqHqK1X2vscfeL8vOnYGFnmBUyVG95lwYv/AXyLQ==
+"@webcomponents/webcomponentsjs@^2.2.8":
+  version "2.2.8"
+  resolved "https://registry.yarnpkg.com/@webcomponents/webcomponentsjs/-/webcomponentsjs-2.2.8.tgz#3769d4cac6f3eaf6ed3704e25522b748353edbdd"
+  integrity sha512-ffLNjJ7LVceAkjtDr26t4wQ7EvRfPQ+Jqzs0dgKOwrcgFLJYAMHfJecjYAK0A4ePJPeF60wmddAl1BAtWMLgdw==
 
 "@webpack-contrib/cli-utils@^1.0.2":
   version "1.0.2"
